@@ -10,8 +10,13 @@
     "singleton": "ts-node src/singleton/main.ts",
     "dev": "tsc -w"
   },
-  "dependencies": {
-    "typescript": "^5.0.0",
-    "ts-node": "^10.9.1"
+  "keywords": [],
+  "author": "Anastasiia Novikova <anasta.novikova.05@gmail.com>",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
   }
-} 
+}

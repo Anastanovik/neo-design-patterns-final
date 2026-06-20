@@ -1,52 +1,84 @@
-# Домашнє завдання до Теми 4
+# Домашнє завдання №4 — Породжувальні патерни
 
-### Опис завдання
+## Опис проєкту
 
-У цьому домашньому завданні необхідно опрацювати три окремі приклади застосування породжувальних патернів: Одинак, Будівельник та Прототип.
+У проєкті реалізовано три порожняльні патерни проєктування на TypeScript:
 
-Кожен приклад подано як реалістичну задачу з практичного TypeScript-контексту. Ваше завдання — проаналізувати початковий код та застосувати відповідний патерн, переписавши реалізацію.
+- Singleton (Одинак)
+- Builder (Будівельник)
+- Prototype (Прототип)
+
+Кожен патерн розміщено в окремій директорії та має демонстраційний файл `main.ts`.
+
+---
 
 ## Структура проєкту
 
-```
 src/
-├── builder/          # Builder pattern implementation
-│   ├── DocumentBuilder.ts
-│   └── main.ts
-├── prototype/        # Prototype pattern implementation
-│   └── main.ts
-└── singleton/        # Singleton pattern implementation
-    └── main.ts
-```
+├── singleton/
+│ ├── AppConfigService.ts
+│ └── main.ts
+├── builder/
+│ ├── DocumentBuilder.ts
+│ └── main.ts
+└── prototype/
+├── UserProfilePrototype.ts
+├── UserProfile.ts
+└── main.ts
 
-## Запуск
+---
 
-1. Встановити залежності:
+## Встановлення залежностей
 
-```bash
 npm install
-```
 
-2. Запустити приклад Builder патерну:
+---
 
-```bash
-npm run builder
-```
+## Запуск проєкту
 
-3. Запустити приклад Prototype патерну:
+### Singleton
 
-```bash
-npm run prototype
-```
+npx ts-node src/singleton/main.ts
 
-4. Запустити приклад Singleton патерну:
+### Builder
 
-```bash
-npm run singleton
-```
+npx ts-node src/builder/main.ts
 
-Для розробки з автоматичною перезбіркою:
+### Prototype
 
-```bash
-npm run dev
-```
+npx ts-node src/prototype/main.ts
+
+---
+
+## Опис патернів
+
+### Singleton
+
+Патерн гарантує існування лише одного екземпляра класу `AppConfigService` у всьому застосунку.
+
+Метод:
+
+- `getInstance()` — повертає єдиний екземпляр класу
+
+---
+
+### Builder
+
+Патерн дозволяє поетапно створювати текстовий документ.
+
+Методи:
+
+- `addHeader()`
+- `addBody()`
+- `addFooter()`
+- `build()`
+
+---
+
+### Prototype
+
+Патерн дозволяє створювати копії об’єктів із глибоким клонуванням.
+
+Метод:
+
+- `clone()` створює незалежну копію об’єкта
