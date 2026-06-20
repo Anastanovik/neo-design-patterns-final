@@ -1,5 +1,7 @@
-import { Author } from "./Author";
+import { AbstractBook } from "./AbstractBook";
 
-export class Book {
-  // TODO
+export class Book extends AbstractBook {
+  getDescription(): string {
+    return `Physical book "${this.title}" by ${this.author.getName()} (${this.year})`;
+  }
 }
