@@ -23,14 +23,14 @@ function createDocument(format: RendererType): string {
         [
           new Paragraph(
             "Дозволяє створювати деревоподібні структури об'єктів.",
-            renderer
+            renderer,
           ),
           new List(
             ["Спрощує структуру", "Гнучкий код", "Легка підтримка"],
-            renderer
+            renderer,
           ),
         ],
-        2
+        2,
       ),
       new Section(
         "Bridge",
@@ -39,10 +39,10 @@ function createDocument(format: RendererType): string {
           new Paragraph("Розділяє абстракцію та реалізацію.", renderer),
           new List(["Незалежні зміни", "Краща масштабованість"], renderer),
         ],
-        2
+        2,
       ),
     ],
-    2
+    2,
   );
 
   doc.add(patterns);
@@ -66,6 +66,7 @@ const content = createDocument(format);
 const renderer = RendererFactory.create(format);
 const result = renderer.wrapDocument(content);
 
-// TODO: Implement the main logic
-
 output ? writeFileSync(output, result) : console.log(result);
+
+summary.printSummary();
+perf.printSummary();
